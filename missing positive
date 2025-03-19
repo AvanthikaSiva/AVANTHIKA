@@ -1,0 +1,19 @@
+import java.util.Arrays;
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+        Arrays.sort(nums);
+        int smallest = 1;
+        for (int num : nums) {
+            if (num == smallest) {
+                smallest++;
+            }
+        }
+        return smallest;
+    }
+ public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] nums = {3,4,-1,1};
+        int result = sol.firstMissingPositive(nums);
+         System.out.println("First missing positive: " + result);
+    }
+}
